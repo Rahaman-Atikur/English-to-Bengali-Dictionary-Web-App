@@ -17,7 +17,8 @@ function loadWordDetails(id) {
 }
 // Display Data Functions
 const displayLoadedEachLesson = (lessonsName) => {
-  console.log(lessonsName);
+  // console.log(lessonsName);
+  
   let buttonContainer = document.getElementById("lesson-btn");
 
   for (let lessonName of lessonsName) {
@@ -29,6 +30,13 @@ const displayLoadedEachLesson = (lessonsName) => {
   }
 };
 const displayWordFromEachLesson = (words) => {
+  if(words.length<1){
+    document.getElementById('default-vocabulary-load').style.display = 'block';
+  }
+  else{
+     document.getElementById('default-vocabulary-load').style.display = 'none';
+  }
+  // document.getElementById('default-vocabulary-load').style.display = 'none';
   console.log(words);
   let wordModal = document.getElementById("word-show");
   wordModal.innerHTML = "";
